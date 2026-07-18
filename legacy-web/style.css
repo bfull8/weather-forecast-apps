@@ -1,0 +1,141 @@
+:root {
+  --fade-distance: 100px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    font-size: 16px;
+}
+
+.coordinates {
+    margin-bottom: 10px;
+}
+
+#latitude, #longitude {
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 120px;
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+}
+
+#header, #header p, #success p {
+    font-size: 20px;
+    margin: 0px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#forecastmeta {
+    grid-column: 1;      
+    padding-right: 20px;
+    height: fit-content;  
+    position: sticky;
+    top: 20px;    
+}
+
+#forecast-periods {
+    display: grid;
+    grid-column: 2;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    border-left: 1px solid black;
+}
+
+#forecastmeta p {
+    font-size: 20px;
+    margin: 0px
+}
+
+h2 {
+    margin: 0px;
+}
+
+#forecast {
+    display: grid;
+    grid-template-columns: 280px 1fr; 
+}
+
+hr {
+  border: none; 
+  height: 1px; 
+  background-color: black;
+  margin: 20px 0px;
+}
+
+.period {
+    margin-left: 20px;
+}
+
+#forecast > .period {
+    grid-column: 2;  
+    min-width: 0;
+}
+
+.period p {
+    margin: 5px 0px;
+} 
+
+#submit {
+    display: block;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 16px;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: #45a049;
+}
+
+#submit:disabled {
+    background-color: #cccccc; /* light gray */
+    color: #666666;            /* darker gray text */
+    cursor: not-allowed;
+}
+
+/* Prevent hover styles when disabled */
+#submit:disabled:hover {
+    background-color: #cccccc;
+}
+
+@keyframes successFadeIn {
+  from {
+        opacity: 0;
+        transform: translateY(var(--fade-distance));
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+#success {
+    grid-column: 2;
+    color: darkgreen;
+    opacity: 0;
+    animation: successFadeIn 1.5s ease-out forwards;
+    margin-left: 20px;
+}
+
+#success p {
+    font-size: 32px;
+}

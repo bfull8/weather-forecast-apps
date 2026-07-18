@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Ben Fullenkamp">
+        <meta name="description" content="Retrieve Weather Forecast from Latitude,Longitude">
+        <title>Weather Application</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js"></script>
+        <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIxdsJyGcjrCz4gRoKva1DbIgaYgMh694&callback=initMap&libraries=maps"
+  async defer>
+</script>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Weather Forecast Application</h1>
+            <div id="map"></div>
+            <div class="coordinates">
+                <label for="latitude">Latitude</label>
+                <input type="text" id="latitude" name="latitude">
+                <label for="longitude">Longitude</label>
+                <input type="text" id="longitude" name="longitude">
+                <button type="submit" id="submit">Submit</button>
+                <p id="search-message"></p>
+            </div>
+        </div>
+        <hr>
+        <div id="forecast">
+        </div>
+    </body>
+</html>
