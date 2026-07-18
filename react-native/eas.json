@@ -1,0 +1,9 @@
+{
+  "build": {
+    "simulator": {
+      "ios": {
+        "simulator": true
+      }
+    }
+  }
+}
